@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Reto Ciclo 3: Disfraz"</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="reservation.js"></script>
+    <script type="text/javascript" src="category.js"></script>
+    <script type="text/javascript" src="costume.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+    <script type="text/javascript" src="message.js"></script>
+    <script type="text/javascript" src="reportes.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="border border-success">
+            <h1>Reto Ciclo 3</h1>
+            <hr>
+            <br>
+            <h2>Categoría</h2>
+            <div id="resultadoCategory"></div>
+            <br>
+            <button class="btn btn-outline-secondary" onclick="traerInformacionCategory()"><b>Consultar</b></button>
+            <br><br>
+            <div>
+                <input type="text" class="form-control" id="name" placeholder="Nombre categoría">
+                <input type="text" class="form-control" id="description" placeholder="Descripción">
+            </div>
+            <button class="btn btn-outline-secondary" onclick="guardarInformacionCategory()"><b>Guardar</b></button>
+        </div>
+
+        <div>
+            <br>
+            <div class="border border-success">
+
+                <h2>Disfraz</h2>
+                <hr>
+                <div id="resultadocostume"></div>
+                <br>
+                <button class="btn btn-outline-secondary" onclick="traerInformacionCostume()"><b>Consultar</b></button>
+                <br><br>
+                <div>
+                    <input type="text" class="form-control" id="nameH" placeholder="Nombre">
+                    <input type="text" class="form-control" id="brandH" placeholder="Marca">
+                    <input type="number" class="form-control" id="categoryH" placeholder="Categoria">
+                    <input type="number" class="form-control" id="yearH" placeholder="Año">
+                    <input type="text" class="form-control" id="descriptionH" placeholder="Descripción">
+                </div>
+                <button class="btn btn-outline-secondary" onclick="guardarInformacionCostume()"><b>Guardar</b></button>
+            </div>
+            <div>
+                <br>
+                <div class="border border-success">
+
+                    <h2>Clientes</h2>
+                    <hr>
+                    <div id="resultadoClient"></div>
+                    <br>
+                    <button class="btn btn-outline-secondary"
+                        onclick="traerInformacionClient()"><b>Consultar</b></button>
+                    <br><br>
+                    <div>
+                        <input type="text" class="form-control" id="nameCl" placeholder="Nombre cliente">
+                        <input type="text" class="form-control" id="emailCl" placeholder="Correo electronico">
+                        <input type="text" class="form-control" id="passwordCl" placeholder="Contraseña">
+                        <input type="number" class="form-control" id="ageCl" placeholder="Edad">
+                    </div>
+                    <button class="btn btn-outline-secondary"
+                        onclick="guardarInformacionClient()"><b>Guardar</b></button>
+                </div>
+
+                <div>
+                    <br>
+                    <div class="border border-success">
+
+                        <h2>Mensajes</h2>
+                        <hr>
+                        <div id="resultadoMessage"></div>
+                        <br>
+                        <button class="btn btn-outline-secondary"
+                            onclick="traerInformacionMessage()"><b>Consultar</b></button>
+                        <br><br>
+                        <div>
+                            <input type="text" class="form-control" id="messagetext" placeholder="Mensaje">
+                            <input type="number" class="form-control" id="clientM" placeholder="Cliente">
+                            <input type="number" class="form-control" id="costumeM" placeholder="Disfraz">
+
+                        </div>
+                        <button class="btn btn-outline-secondary"
+                            onclick="guardarInformacionMessage()"><b>Guardar</b></button>
+                    </div>
+
+                    <div>
+                        <br>
+                        <div class="border border-success">
+
+                            <h2>Reservación</h2>
+                            <hr>
+                            <div id="resultadoReservation"></div>
+                            <br>
+                            <button class="btn btn-outline-secondary"
+                                onclick="traerInformacionReservation()"><b>Consultar</b></button>
+                            <br><br>
+                            <div>
+                                <input type="date" class="form-control" id="startDate" placeholder="Fecha de Inicio">
+                                <input type="date" class="form-control" id="devolutionDate"
+                                    placeholder="Fecha de Terminado">
+                                <input type="number" class="form-control" id="clientR" placeholder="Cliente">
+                                <input type="number" class="form-control" id="costumeR" placeholder="Disfraz">
+
+                            </div>
+                            <button class="btn btn-outline-secondary"
+                                onclick="guardarInformacionReservation()"><b>Guardar</b></button>
+                        </div>
+
+                        <br>
+
+                        <div>
+
+                            <div class="border border-success">
+                                <h1>Reportes</h1>
+                                <hr>
+                                <br>
+
+                                <h2>Reporte por Fechas</h2>
+                                <hr>
+                                <input type="date" class="form-control" id="RstarDate" placeholder="descripcion">
+                                <input type="date" class="form-control" id="RdevolutionDate" placeholder="descripcion">
+                                <button class="btn btn-outline-secondary" onclick="traerReporteDate()"> <b>Generar
+                                        reporte</b></button>
+                                <br>
+                                <div id="resultadoDate"></div>
+                            </div>
+                            <div>
+                                <br>
+                                <div class="border border-success">
+
+                                    <h2>Reporte Conteo Reservas</h2>
+                                    <hr>
+                                    <button class="btn btn-outline-secondary" onclick="traerReporteStatus()"><b>Generar
+                                            reporte</b></button>
+                                    <br>
+                                    <div id="resultadoStatus"></div>
+                                </div>
+                                <div>
+                                    <br>
+                                    <div class="border border-success">
+
+                                        <h2>Reporte Cantidad de reservas por Clientes</h2>
+                                        <hr>
+                                        <button class="btn btn-outline-secondary"
+                                            onclick="traerReporteClientes()"><b>Generar reporte</b></button>
+                                        <br>
+                                        <div id="resultadoClientes"></div>
+                                    </div>
+
+</body>
+
+</html>

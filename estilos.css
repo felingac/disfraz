@@ -1,0 +1,77 @@
+
+
+body{
+	background: #f4f4f4;
+	font-family: 'Montserrat', sans-serif;
+}
+.container {
+	width: 100%;
+	min-width: 400px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+div input {
+display: block;
+width: 100%;
+margin: 8px 0;
+border: none;
+padding: 5px;
+border-radius: 10px;
+}
+div input {
+box-shadow: 0 8px 40px -5px rgba(9, 31, 67, 0.1);
+}
+button {
+border: navajowhite;
+background: #a4a4a4;
+padding: 5px 20px;
+border-radius: 12px;
+margin: 10px 10px 10px 0;
+color: #f4f4f4;
+cursor: pointer;
+}
+.disfraces, .clientes, .mensajes {
+box-shadow: 0 8px 40px -5px rgba(9, 31, 67, 0.1);
+padding: 20px 34px;
+border-radius: 30px;
+margin: 20px auto;
+}
+h2{
+	color:#0000ff;
+}
+
+
+.form-control{
+	width: 180px;
+	display: inline; 
+	margin:1em;
+}
+
+#resultadoCategory table{
+	width: 300px;
+}
+
+.border-success{
+display: block;
+margin: 0 auto;
+	background: #fff;
+padding: 30px;
+border-radius: 20px;
+}
+
+table {
+border-collapse: collapse;
+}
+
+td, th {
+border: 1px solid #999;
+text-align: left;
+padding: 10px;
+}
+
+td {
+	max-width: 470px;
+	overflow: auto;
+	text-overflow: ellipsis;
+	white-space: pre-line;
+}
