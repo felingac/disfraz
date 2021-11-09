@@ -1,6 +1,6 @@
 function traerInformacionMessage(){
     $.ajax({
-        url: "http://localhost:8080/api/Message/all",
+        url: "http://132.226.165.231:8080/api/Message/all",
         headers: {
             'Access-Control-Allow-Origin': '*'
         },        
@@ -72,7 +72,7 @@ function guardarInformacionMessage(){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Message/save",
+        url:"http://132.226.165.231:8080/api/Message/save",
         type:"POST",
         data:dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -93,7 +93,7 @@ function guardarInformacionMessage(){
     };   
     console.log("datos "+JSON.stringify(myData));
     $.ajax({
-        url:"http://localhost:8080/api/Message/update",
+        url:"http://132.226.165.231:8080/api/Message/update",
         type:"PUT",
         data:JSON.stringify(myData),
         contentType:"application/JSON",
@@ -118,7 +118,7 @@ function borrarElementoMessage(idElemento){
    alert(idElemento)
 
     $.ajax({
-        url:"http://localhost:8080/api/Message/"+idElemento,
+        url:"http://132.226.165.231:8080/api/Message/"+idElemento,
         type:"DELETE",
         
         datatype:"JSON",
@@ -133,7 +133,7 @@ function borrarElementoMessage(idElemento){
 function obtenerItemEspecificoMessage(items) {
   $.ajax({
     dataType: "json",
-    url: "http://localhost:8080/api/Message/"+items ,
+    url: "http://132.226.165.231:8080/api/Message/"+items ,
     type: "GET",
     success: function (response) {
       

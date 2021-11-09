@@ -1,6 +1,6 @@
 function traerInformacionClient(){
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://132.226.165.231:8080/api/Client/all",
         headers: {
             'Access-Control-Allow-Origin': '*'
         },        
@@ -80,7 +80,7 @@ function guardarInformacionClient(){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Client/save",
+        url:"http://132.226.165.231:8080/api/Client/save",
         type:"POST",
         data:dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -106,7 +106,7 @@ function editarInformacionClient(idClient){
     };   
     console.log("datos "+JSON.stringify(myData));
     $.ajax({
-        url:"http://localhost:8080/api/Client/update",
+        url:"http://132.226.165.231:8080/api/Client/update",
         type:"PUT",
         data:JSON.stringify(myData),
         contentType:"application/JSON",
@@ -131,7 +131,7 @@ function borrarElementoClient(idElemento){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Client/"+idElemento,
+        url:"http://132.226.165.231:8080/api/Client/"+idElemento,
         type:"DELETE",
         datatype:"JSON",
         contentType:"application/JSON",
@@ -146,7 +146,7 @@ function borrarElementoClient(idElemento){
 function obtenerItemEspecificoClient(items) {
   $.ajax({
     dataType: "json",
-    url: "http://localhost:8080/api/Client/"+items ,
+    url: "http://132.226.165.231:8080/api/Client/"+items ,
     type: "GET",
     success: function (response) {
       

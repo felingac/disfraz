@@ -1,6 +1,6 @@
 function traerInformacionCostume(){
     $.ajax({
-        url: "http://localhost:8080/api/Costume/all",
+        url: "http://132.226.165.231:8080/api/Costume/all",
         headers: {
             'Access-Control-Allow-Origin': '*'
         },        
@@ -30,8 +30,6 @@ function pintarRespuestaCostume(items){
 
         for (var k = 0;  k<reservaciones.length;  k++){
                         if (JSON.stringify(reservaciones) != "[]"){
-                            //delete reservaciones[k]["idReservation"];
-                            //delete reservaciones[k]["client"]["idClient"];
                             delete reservaciones[k]["client"]["password"];
                             delete reservaciones[k]["client"]["age"];
                         }else{
@@ -78,7 +76,7 @@ function guardarInformacionCostume(){
     };   
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Costume/save",
+        url:"http://132.226.165.231:8080/api/Costume/save",
         type:"POST",
         data:dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -105,7 +103,7 @@ function editarInformacionCostume(idH){
     };   
     console.log("datos "+JSON.stringify(myData));
     $.ajax({
-        url:"http://localhost:8080/api/Costume/update",
+        url:"http://132.226.165.231:8080/api/Costume/update",
         type:"PUT",
         data:JSON.stringify(myData),
         contentType:"application/JSON",
@@ -130,7 +128,7 @@ function borrarElementoCostume(idElemento){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Costume/"+idElemento,
+        url:"http://132.226.165.231:8080/api/Costume/"+idElemento,
         type:"DELETE",
         datatype:"JSON",
         contentType:"application/JSON",
@@ -146,7 +144,7 @@ function obtenerItemEspecificoCostume(items) {
     console.log("---- obtenerItemEspecificoCostume items:", items);
   $.ajax({
     dataType: "json",
-    url: "http://localhost:8080/api/Costume/"+items ,
+    url: "http://132.226.165.231:8080/api/Costume/"+items ,
     type: "GET",
     success: function (response) {
       

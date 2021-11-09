@@ -1,6 +1,6 @@
 function traerInformacionReservation(){
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/all",
+        url: "http://132.226.165.231:8080/api/Reservation/all",
         headers: {
             'Access-Control-Allow-Origin': '*'
         },        
@@ -75,7 +75,7 @@ function guardarInformacionReservation(){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/save",
+        url:"http://132.226.165.231:8080/api/Reservation/save",
         type:"POST",
         data:dataToSend,
         contentType: "application/json; charset=utf-8",
@@ -102,7 +102,7 @@ function editarInformacionReservation(idReservation){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/update",
+        url:"http://132.226.165.231:8080/api/Reservation/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -127,7 +127,7 @@ function borrarElementoReservation(idElemento){
     let dataToSend=JSON.stringify(myData);
 
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/"+idElemento,
+        url:"http://132.226.165.231:8080/api/Reservation/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",
